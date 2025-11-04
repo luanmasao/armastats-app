@@ -1,0 +1,100 @@
+﻿ 0:50:15 Game Port: 2302, Steam Query Port: 2303
+ 0:50:23 UPNP failed
+ 0:50:23 Mission Opex.Altis read from bank.
+ 0:50:24 Host identity created.
+ 0:50:44 YourDoctor uses modified data file
+ 0:50:44 Player YourDoctor connecting.
+ 0:50:46 Player YourDoctor connected (id=76561198131027021).
+ 0:50:50 Taurax uses modified data file
+ 0:50:50 Player Taurax connecting.
+ 0:50:51 Aikan uses modified data file
+ 0:50:51 Player Aikan connecting.
+ 0:50:52 Admin logged in, player: YourDoctor, playerUID: 76561198131027021, IP: 26.177.79.88:2304.
+ 0:50:53 Player Taurax connected (id=76561198865878754).
+ 0:50:54 Hunter uses modified data file
+ 0:50:54 Player Hunter connecting.
+ 0:50:54 Player Aikan connected (id=76561198198619894).
+ 0:50:55 Player Hunter connected (id=76561198090216481).
+ 0:50:56 Luanmh uses modified data file
+ 0:50:56 Player Luanmh connecting.
+ 0:50:56 Player Luanmh connected (id=76561198043167602).
+ 0:51:20 Roles assigned.
+ 0:51:20 Reading mission ...
+ 0:52:10 Mission read.
+ 0:52:28 Game started.
+ 0:56:10 Player Luanmh disconnected.
+ 0:56:10 Player Taurax disconnected.
+ 0:56:31 Player Hunter disconnected.
+ 0:56:47 Player Aikan disconnected.
+ 0:57:18 Game finished.
+class Session
+{
+	mission="Opex";
+	island="Altis";
+	gameType="Coop";
+	duration=289.06403;
+	class Player1
+	{
+		name="Taurax";
+		killsInfantry=20;
+		killsSoft=5;
+		killsArmor=10;
+		killsAir=2;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=37;
+		killed=0;
+	};
+	class Player2
+	{
+		name="YourDoctor";
+		killsInfantry=20;
+		killsSoft=5;
+		killsArmor=10;
+		killsAir=2;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=37;
+		killed=0;
+	};
+	class Player3
+	{
+		name="Aikan";
+		killsInfantry=0;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=0;
+		killed=50;
+	};
+	class Player4
+	{
+		name="Hunter";
+		killsInfantry=20;
+		killsSoft=5;
+		killsArmor=10;
+		killsAir=2;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=37;
+		killed=0;
+	};
+	class Player5
+	{
+		name="Luanmh";
+		killsInfantry=20;
+		killsSoft=5;
+		killsArmor=10;
+		killsAir=2;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=37;
+		killed=0;
+	};
+};
+ 0:57:27 Waiting for next game.
+ 0:57:29 Mission Opex.Altis read from bank.
+ 0:57:30 Player YourDoctor disconnected.
+ 0:57:30 Admin logged out, player: YourDoctor, playerUID: 76561198131027021, IP: 26.177.79.88:2304.

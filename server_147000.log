@@ -1,0 +1,245 @@
+﻿10:35:31 Game Port: 2316, Steam Query Port: 2317
+10:35:31 Can't find a mission collection / mission with template name: 'Changeme.Altis', skipping to next mission.
+10:35:31 Host identity created.
+10:37:37 Bobi uses modified data file
+10:37:37 Player Bobi connecting.
+10:37:38 Player Bobi connected (id=76561198155238046).
+10:37:51 Admin logged in, player: Bobi, playerUID: 76561198155238046, IP: 192.168.1.115:2304.
+10:38:07 Mission SF_OP_IRON_VIPER_10-2025.tem_kujari read from bank.
+10:38:27 Player Bobi disconnected.
+10:38:27 Admin logged out, player: Bobi, playerUID: 76561198155238046, IP: 192.168.1.115:2304.
+10:38:50 Bobi uses modified data file
+10:38:50 Player Bobi connecting.
+10:38:51 Player Bobi connected (id=76561198155238046).
+10:39:24 Roles assigned.
+10:39:24 Reading mission ...
+10:39:37 Mission read.
+10:40:01 Game started.
+10:48:34 Admin logged in, player: Bobi, playerUID: 76561198155238046, IP: 192.168.1.115:2304.
+10:48:38 Game restarted
+class Session
+{
+	mission="Operation Barbarossa";
+	island="tem_kujari";
+	gameType="COOP";
+	duration=517.51801;
+	class Player1
+	{
+		name="Bobi";
+		killsInfantry=0;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=0;
+		killed=0;
+	};
+};
+10:48:40 Roles assigned.
+10:48:40 Reading mission ...
+10:48:51 Mission read.
+10:49:09 Game started.
+11:10:44 Bugs Bunny uses modified data file
+11:10:44 Player Bugs Bunny connecting.
+11:10:46 Player Bugs Bunny connected (id=76561198387064439).
+11:11:53 Glenn uses modified data file
+11:11:53 Player Glenn connecting.
+11:11:55 Player Glenn connected (id=76561199069019362).
+11:13:02 Punisher[BIA] uses modified data file
+11:13:02 Player Punisher[BIA] connecting.
+11:13:04 Player Punisher[BIA] connected (id=76561198007721786).
+11:16:45 Player Bugs Bunny disconnected.
+11:16:46 Luanmh[BiA] uses modified data file
+11:16:46 Player Luanmh[BiA] connecting.
+11:16:47 Player Luanmh[BiA] connected (id=76561198043167602).
+11:16:50 Player Luanmh[BiA] disconnected.
+11:17:01 Luanmh uses modified data file
+11:17:01 Player Luanmh connecting.
+11:17:03 Player Luanmh connected (id=76561198043167602).
+11:17:05 Turtright [Bia] uses modified data file
+11:17:05 Player Turtright [Bia] connecting.
+11:17:07 Player Turtright [Bia] connected (id=76561198086163630).
+11:20:18 Jäger uses modified data file
+11:20:18 Player Jäger connecting.
+11:20:22 Player Jäger connected (id=76561199010996421).
+11:22:24 Bugs Bunny uses modified data file
+11:22:24 Player Bugs Bunny connecting.
+11:22:25 Player Bugs Bunny connected (id=76561198387064439).
+11:28:20 Hunter uses modified data file
+11:28:20 Player Hunter connecting.
+11:28:26 Player Hunter connected (id=76561198090216481).
+11:28:30 Kofeina[BIA] uses modified data file
+11:28:30 Player Kofeina[BIA] connecting.
+11:28:31 Player Kofeina[BIA] connected (id=76561198005036029).
+11:28:49 Player Kofeina[BIA] disconnected.
+11:29:05 Kofeina uses modified data file
+11:29:05 Player Kofeina connecting.
+11:29:21 Player Kofeina connected (id=76561198005036029).
+11:33:38 Combat [BIA] uses modified data file
+11:33:38 Player Combat [BIA] connecting.
+11:33:40 Player Combat [BIA] connected (id=76561198075643531).
+11:44:42 YourDoctor uses modified data file
+11:44:42 Player YourDoctor connecting.
+11:44:44 Player YourDoctor connected (id=76561198131027021).
+11:48:51 Rgr Kiwi uses modified data file
+11:48:51 Player Rgr Kiwi connecting.
+11:48:52 Player Rgr Kiwi connected (id=76561198273015095).
+13:09:26 Player Luanmh is losing connection
+13:09:31 Player Luanmh disconnected.
+13:17:27 Player Punisher[BIA] disconnected.
+13:17:39 Player Turtright [Bia] disconnected.
+13:17:42 Player Combat [BIA] disconnected.
+13:17:48 Player Jäger disconnected.
+13:18:08 Game finished.
+class Session
+{
+	mission="Operation Barbarossa";
+	island="tem_kujari";
+	gameType="COOP";
+	duration=8939.0635;
+	class Player1
+	{
+		name="Glenn";
+		killsInfantry=33;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=33;
+		killed=1;
+	};
+	class Player2
+	{
+		name="Punisher[BIA]";
+		killsInfantry=18;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=18;
+		killed=0;
+	};
+	class Player3
+	{
+		name="Kofeina";
+		killsInfantry=15;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=15;
+		killed=0;
+	};
+	class Player4
+	{
+		name="Rgr Kiwi";
+		killsInfantry=14;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=14;
+		killed=0;
+	};
+	class Player5
+	{
+		name="Combat [BIA]";
+		killsInfantry=8;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=8;
+		killed=1;
+	};
+	class Player6
+	{
+		name="Hunter";
+		killsInfantry=7;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=7;
+		killed=0;
+	};
+	class Player7
+	{
+		name="Turtright [Bia]";
+		killsInfantry=7;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=7;
+		killed=0;
+	};
+	class Player8
+	{
+		name="Jäger";
+		killsInfantry=7;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=7;
+		killed=1;
+	};
+	class Player9
+	{
+		name="Bugs Bunny";
+		killsInfantry=0;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=1;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=5;
+		killed=0;
+	};
+	class Player10
+	{
+		name="YourDoctor";
+		killsInfantry=3;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=3;
+		killed=0;
+	};
+	class Player11
+	{
+		name="Bobi";
+		killsInfantry=2;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=2;
+		killed=0;
+	};
+	class Player12
+	{
+		name="Luanmh";
+		killsInfantry=2;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=0;
+		customScore=0;
+		killsTotal=2;
+		killed=0;
+	};
+};
