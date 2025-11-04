@@ -1,0 +1,11 @@
+{
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "tailwind:dev": "npx @tailwindcss/cli -i ./src/tailwindcss.style.css -o ../../src/main/resources/static/css/main.css --watch",
+  "tailwind:build": "npx @tailwindcss/cli -i ./src/tailwindcss.style.css -o ../../src/main/resources/static/css/main.css"
+},
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  }
+}

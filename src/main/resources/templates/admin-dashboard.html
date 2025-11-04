@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script th:src="@{/js/chart.umd.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css">
+    <style> body { font-family: 'Inter', sans-serif; } </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <div th:if="${successMessage}" 
+         class="mb-4 p-4 text-sm text-green-700 bg-green-100 rounded-lg border border-green-400" 
+         role="alert">
+        <span th:text="${successMessage}"></span>
+    </div>
+    
+    <div th:if="${errorMessage}" 
+         class="mb-4 p-4 text-sm text-red-700 bg-red-100 rounded-lg border border-red-400" 
+         role="alert">
+        <span th:text="${errorMessage}"></span>
+    </div>
+    <h1 class="text-3xl font-bold text-white mb-6">Admin Panel</h1>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 class="text-3xl font-bold text-white mb-6">Admin Panel</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold text-white mb-4">Upload Server Log</h2>
+                <form th:action="@{/admin/upload}" method="post" enctype="multipart/form-data">
+                     <div class="flex items-center">
+                        <input type="file" name="file" id="log-file" class="hidden" required>
+                        <label for="log-file" class="cursor-pointer text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5">Choose file</label>
+                        <span id="file-name-display" class="ml-4 text-gray-400">No file chosen</span>
+                        <button type="submit" class="ml-auto text-white bg-green-600 hover:bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5">Send</button>
+                    </div>
+                </form>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold text-white mb-4">Mission Manager</h2>
+                <a th:href="@{/sessions}" class="inline-block text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5">See Mission Attendence</a>
+            </div>
+        </div>
+        <div class="space-y-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h2 class="text-xl font-semibold text-white mb-4">Number of Players(Last 15 Missions)</h2>
+                    <div class="relative h-96">
+                        <canvas id="playerCountChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h2 class="text-xl font-semibold text-white mb-4">Number of Kills(Last 15 Missions)</h2>
+                    <div class="relative h-96">
+                        <canvas id="missionKillsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold text-white mb-4">Number of Deaths(Last 15 Missions)</h2>
+                <div class="relative h-96">
+                    <canvas id="missionDeathsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        async function renderChart(canvasId, endpoint, label, backgroundColor, borderColor, dataKey) {
+            const ctx = document.getElementById(canvasId);
+            if (!ctx) return;
+
+            try {
+                const response = await fetch(endpoint);
+                if (!response.ok) throw new Error('Could not load chart data.');
+                const data = await response.json();
+                if (data.length === 0) throw new Error('No data available to show.');
+
+                const labels = data.map(item => item.missionName);
+                const values = data.map(item => item[dataKey]); 
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: label,
+                            data: values,
+                            backgroundColor: backgroundColor,
+                            borderColor: borderColor,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: { ticks: { color: '#9CA3AF' }, grid: { color: 'transparent' } },
+                            x: {
+                                beginAtZero: true,
+                                ticks: { color: '#9CA3AF', stepSize: 1 },
+                                grid: { color: '#374151' }
+                            }
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error(`Could not render the chart ${canvasId}:`, error);
+                const canvas = document.getElementById(canvasId);
+                const ctxError = canvas.getContext('2d');
+                ctxError.font = '16px Inter, sans-serif';
+                ctxError.fillStyle = '#F87171';
+                ctxError.textAlign = 'center';
+                ctxError.fillText(error.message, canvas.width / 2, canvas.height / 2);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const fileInput = document.getElementById('log-file');
+            const fileNameDisplay = document.getElementById('file-name-display');
+            if (fileInput) {
+                fileInput.addEventListener('change', () => {
+                    fileNameDisplay.textContent = fileInput.files.length > 0 ? fileInput.files[0].name : 'No file chosen';
+                });
+            }
+            renderChart('playerCountChart', '/admin/player-count-chart-data', 'Número de Jogadores', '#60A5FA80', '#60A5FA', 'playerCount');
+            renderChart('missionKillsChart', '/admin/mission-kills-chart-data', 'Total Kills', '#34D39980', '#34D399', 'totalKills');
+            renderChart('missionDeathsChart', '/admin/mission-deaths-chart-data', 'Total Deaths', '#F8717180', '#F87171', 'totalDeaths');
+        });
+    </script>
+
+    
+</body>
+</html>

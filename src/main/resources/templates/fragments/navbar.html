@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css">
+<body>
+
+    <nav th:fragment="navbar" class="bg-gray-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a th:href="@{/}" class="font-bold text-xl text-white">ArmA 3 Stats</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a th:href="@{/}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Rankings</a>
+                    <a th:href="@{/players}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Players</a>
+                    
+                    <div sec:authorize="isAnonymous()">
+                         <a th:href="@{/admin/login}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Admin Login</a>
+                    </div>
+                    
+                    <div sec:authorize="isAuthenticated()">
+                        <a th:href="@{/admin/dashboard}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Admin Panel</a>
+                        <form th:action="@{/perform_logout}" method="post" class="inline">
+                            <button type="submit" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Admin Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="'Stats from ' + ${player.name}"></title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../static/css/main.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 class="text-3xl font-bold text-white mb-2">Stats from <span th:text="${player.name}"></span></h1>
+        <a th:href="@{/players}" class="text-blue-400 hover:underline mb-6 block">&larr; Back to players list</a>
+
+        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+             <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-400">
+                    <thead class="text-xs text-gray-300 uppercase bg-gray-700">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">Mission</th>
+                            <th scope="col" class="px-6 py-3">Kills (Total)</th>
+                            <th scope="col" class="px-6 py-3">Deaths</th>
+                            <th scope="col" class="px-6 py-3">Kills (Infantry)</th>
+                            <th scope="col" class="px-6 py-3">Kills (Armor)</th>
+                            <th scope="col" class="px-6 py-3">Kills (Aerial)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="stat : ${stats}" class="bg-gray-800 border-b border-gray-700">
+                            <td class="px-6 py-4 font-medium text-white" th:text="${stat.gameSession.missionName}"></td>
+                            <td class="px-6 py-4" th:text="${stat.killsTotal}"></td>
+                            <td class="px-6 py-4" th:text="${stat.deaths}"></td>
+                            <td class="px-6 py-4" th:text="${stat.killsInfantry}"></td>
+                            <td class="px-6 py-4" th:text="${stat.killsArmor}"></td>
+                            <td class="px-6 py-4" th:text="${stat.killsAir}"></td>
+                        </tr>
+                        <tr th:if="${#lists.isEmpty(stats)}">
+                            <td colspan="6" class="text-center py-4">This player doesn't have registered stats</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

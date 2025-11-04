@@ -1,0 +1,22 @@
+FROM gradle:8.14.3-jdk24 AS build
+WORKDIR /home/gradle/src
+COPY build.gradle settings.gradle ./
+
+RUN gradle dependencies --no-daemon || return 0
+
+COPY src ./src
+
+RUN gradle bootJar --no-daemon
+
+FROM eclipse-temurin:24-jre
+
+RUN useradd -m appuser
+USER appuser
+
+WORKDIR /app
+
+COPY --from=build /home/gradle/src/build/libs/*.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
