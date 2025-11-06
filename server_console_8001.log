@@ -1,0 +1,110 @@
+﻿10:51:59 Game Port: 2302, Steam Query Port: 2303
+10:52:08 UPNP failed
+10:52:08 Host identity created.
+10:52:20 Aikan uses modified data file
+10:52:20 Player Aikan connecting.
+10:52:23 Player Aikan connected (id=76561198198619894).
+10:52:50 YourDoctor uses modified data file
+10:52:50 Player YourDoctor connecting.
+10:52:52 Player YourDoctor connected (id=76561198131027021).
+10:50:56 Hunter uses modified data file
+10:50:56 Player Hunter connecting.
+10:50:57 Player Hunter connected (id=76561198090216481).
+10:53:56 Luanmh uses modified data file
+10:53:47 Player Luanmh connecting.
+10:53:48 Player Luanmh connected (id=76561198043167602).
+10:53:08 Admin logged in, player: YourDoctor, playerUID: 76561198131027021, IP: 26.177.79.88:2316.
+10:53:10 Roles assigned.
+10:53:10 Reading mission ...
+10:54:34 Mission read.
+10:55:44 Player YourDoctor disconnected.
+10:55:44 Admin logged out, player: YourDoctor, playerUID: 76561198131027021, IP: 26.177.79.88:2316.
+10:55:44 Game started.
+10:56:25 Admin logged in, player: Aikan, playerUID: 76561198198619894, IP: 192.168.1.70:2304.
+10:58:03 YourDoctor uses modified data file
+10:58:03 Player YourDoctor connecting.
+10:58:05 Player YourDoctor connected (id=76561198131027021).
+10:58:23 Admin logged out, player: Aikan, playerUID: 76561198198619894, IP: 192.168.1.70:2304.
+11:05:32 Hunter uses modified data file
+11:05:32 Player Hunter connecting.
+11:05:34 Player Hunter connected (id=76561198090216481).
+11:08:30 Admin logged in, player: YourDoctor, playerUID: 76561198131027021, IP: 26.177.79.88:2316.
+11:30:20 Taurax uses modified data file
+11:30:21 Player Taurax connecting.
+11:30:24 Player Taurax connected (id=76561198865878754).
+12:19:47 Player YourDoctor disconnected.
+12:19:50 Player Taurax disconnected.
+12:19:50 Player Luanmh disconnected.
+12:19:47 Admin logged out, player: YourDoctor, playerUID: 76561198131027021, IP: 26.177.79.88:2316.
+12:19:54 Game finished.
+class Session
+{
+	mission="Operation Red Harvest";
+	island="chernarus";
+	gameType="COOP";
+	duration=5049.6333;
+	class Player1
+	{
+		name="YourDoctor";
+		killsInfantry=0;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=10;
+		customScore=0;
+		killsTotal=10;
+		killed=4;
+	};
+	class Player2
+	{
+		name="Aikan";
+		killsInfantry=0;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=7;
+		customScore=0;
+		killsTotal=7;
+		killed=2;
+	};
+	class Player3
+	{
+		name="Taurax";
+		killsInfantry=0;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=15;
+		customScore=0;
+		killsTotal=15;
+		killed=3;
+	};
+		class Player4
+	{
+		name="Hunter";
+		killsInfantry=0;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=15;
+		customScore=0;
+		killsTotal=15;
+		killed=0;
+	};
+	class Player5
+	{
+		name="Luanmh";
+		killsInfantry=0;
+		killsSoft=0;
+		killsArmor=0;
+		killsAir=0;
+		killsPlayers=4;
+		customScore=0;
+		killsTotal=4;
+		killed=1;
+	};
+
+};
+12:19:54 Waiting for next game.
+12:20:05 Player Aikan disconnected.
+12:21:47 Player Hunter disconnected.
